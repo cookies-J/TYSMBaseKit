@@ -1,0 +1,29 @@
+PODS:
+  - TYSMBaseKit (0.1.0):
+    - TYSMBaseKit/src (= 0.1.0)
+    - TYSMBaseKit/TYSMCTMediator (= 0.1.0)
+    - TYSMBaseKit/TYSMGBDeviceInfo (= 0.1.0)
+  - TYSMBaseKit/src (0.1.0):
+    - XXNibBridge
+  - TYSMBaseKit/TYSMCTMediator (0.1.0)
+  - TYSMBaseKit/TYSMGBDeviceInfo (0.1.0)
+  - XXNibBridge (2.3.1)
+
+DEPENDENCIES:
+  - TYSMBaseKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - XXNibBridge
+
+EXTERNAL SOURCES:
+  TYSMBaseKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TYSMBaseKit: 20ca4537292996112ad8d54fa094b7a10fa49afc
+  XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
+
+PODFILE CHECKSUM: 6134f8eb8173eac6960b715ca641f75d41715797
+
+COCOAPODS: 1.10.0
