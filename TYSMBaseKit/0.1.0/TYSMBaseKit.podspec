@@ -81,6 +81,12 @@ Pod::Spec.new do |s|
     src.ios.dependency "XXNibBridge"
   end
   
+  s.subspec 'DB' do |sna|
+#    sna.requires_arc = false
+    sna.dependency "WCDB"
+    sna.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/WCDB"}
+  end
+  
   # 路由组件
   s.subspec 'TYSMCTMediator' do | m |
     m.source_files = 'TYSMBaseKit/Classes/TYSM_CTMediator/*'
