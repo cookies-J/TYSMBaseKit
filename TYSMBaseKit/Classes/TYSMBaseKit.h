@@ -16,7 +16,7 @@
  
 #if TARGET_OS_IOS
 /// 集成 YYKit   去除部分冗余
-#import <TYSMBaseKit/TYSMKit.h>
+#import <TYSMBaseKit/TYSMYYKit.h>
 /// UIKit 控制器集
 #import <TYSMBaseKit/ViewControllers.h>
 /// UIKit 视图集

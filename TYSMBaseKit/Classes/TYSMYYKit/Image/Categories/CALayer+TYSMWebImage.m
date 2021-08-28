@@ -1,0 +1,189 @@
+//
+//  CALayer+TYSMWebImage.m
+//  YYKit <https://github.com/ibireme/YYKit>
+//
+//  Created by ibireme on 15/2/23.
+//  Copyright (c) 2015 ibireme.
+//
+//  This source code is licensed under the MIT-style license found in the
+//  LICENSE file in the root directory of this source tree.
+//
+
+#import "CALayer+TYSMWebImage.h"
+#import "TYSMWebImageOperation.h"
+#import "_TYSMWebImageSetter.h"
+#import "YYKitMacro.h"
+#import <objc/runtime.h>
+
+YYSYNTH_DUMMY_CLASS(CALayer_TYSMWebImage)
+
+static int _TYSMWebImageSetterKey;
+
+
+@implementation CALayer (YYWebImage)
+
+- (NSURL *)tysm_imageURL {
+    _TYSMWebImageSetter *setter = objc_getAssociatedObject(self, &_TYSMWebImageSetterKey);
+    return setter.imageURL;
+}
+
+- (void)setTysm_imageURL:(NSURL *)imageURL {
+    [self setImageWithURL:imageURL
+              placeholder:nil
+                  options:kNilOptions
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
+}
+
+- (void)tysm_setImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:kNilOptions
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
+}
+
+- (void)tysm_setImageWithURL:(NSURL *)imageURL options:(TYSMWebImageOptions)options {
+    [self setImageWithURL:imageURL
+              placeholder:nil
+                  options:options
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
+}
+
+- (void)tysm_setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(TYSMWebImageOptions)options
+             completion:(TYSMWebImageCompletionBlock)completion {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:options
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:completion];
+}
+
+- (void)setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(TYSMWebImageOptions)options
+               progress:(TYSMWebImageProgressBlock)progress
+              transform:(TYSMWebImageTransformBlock)transform
+             completion:(TYSMWebImageCompletionBlock)completion {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:options
+                  manager:nil
+                 progress:progress
+                transform:transform
+               completion:completion];
+}
+
+- (void)setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(TYSMWebImageOptions)options
+                manager:(TYSMWebImageManager *)manager
+               progress:(TYSMWebImageProgressBlock)progress
+              transform:(TYSMWebImageTransformBlock)transform
+             completion:(TYSMWebImageCompletionBlock)completion {
+    
+    if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
+    manager = manager ? manager : [TYSMWebImageManager sharedManager];
+    
+    
+    _TYSMWebImageSetter *setter = objc_getAssociatedObject(self, &_TYSMWebImageSetterKey);
+    if (!setter) {
+        setter = [_TYSMWebImageSetter new];
+        objc_setAssociatedObject(self, &_TYSMWebImageSetterKey, setter, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    int32_t sentinel = [setter cancelWithNewURL:imageURL];
+    
+    dispatch_async_on_main_queue(^{
+        if ((options & TYSMWebImageOptionSetImageWithFadeAnimation) &&
+            !(options & TYSMWebImageOptionAvoidSetImage)) {
+            [self removeAnimationForKey:_TYSMWebImageFadeAnimationKey];
+        }
+        
+        if (!imageURL) {
+            if (!(options & TYSMWebImageOptionIgnorePlaceHolder)) {
+                self.contents = (id)placeholder.CGImage;
+            }
+            return;
+        }
+        
+        // get the image from memory as quickly as possible
+        UIImage *imageFromMemory = nil;
+        if (manager.cache &&
+            !(options & TYSMWebImageOptionUseNSURLCache) &&
+            !(options & TYSMWebImageOptionRefreshImageCache)) {
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:TYSMImageCacheTypeMemory];
+        }
+        if (imageFromMemory) {
+            if (!(options & TYSMWebImageOptionAvoidSetImage)) {
+                self.contents = (id)imageFromMemory.CGImage;
+            }
+            if(completion) completion(imageFromMemory, imageURL, TYSMWebImageFromMemoryCacheFast, TYSMWebImageStageFinished, nil);
+            return;
+        }
+        
+        if (!(options & TYSMWebImageOptionIgnorePlaceHolder)) {
+            self.contents = (id)placeholder.CGImage;
+        }
+        
+        __weak typeof(self) _self = self;
+        dispatch_async([_TYSMWebImageSetter setterQueue], ^{
+            TYSMWebImageProgressBlock _progress = nil;
+            if (progress) _progress = ^(NSInteger receivedSize, NSInteger expectedSize) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    progress(receivedSize, expectedSize);
+                });
+            };
+            
+            __block int32_t newSentinel = 0;
+            __block __weak typeof(setter) weakSetter = nil;
+            TYSMWebImageCompletionBlock _completion = ^(UIImage *image, NSURL *url, TYSMWebImageFromType from, TYSMWebImageStage stage, NSError *error) {
+                __strong typeof(_self) self = _self;
+                BOOL setImage = (stage == TYSMWebImageStageFinished || stage == TYSMWebImageStageProgress) && image && !(options & TYSMWebImageOptionAvoidSetImage);
+                BOOL showFade = (options & TYSMWebImageOptionSetImageWithFadeAnimation);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    BOOL sentinelChanged = weakSetter && weakSetter.sentinel != newSentinel;
+                    if (setImage && self && !sentinelChanged) {
+                        if (showFade) {
+                            CATransition *transition = [CATransition animation];
+                            transition.duration = stage == TYSMWebImageStageFinished ? _TYSMWebImageFadeTime : _TYSMWebImageProgressiveFadeTime;
+                            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                            transition.type = kCATransitionFade;
+                            [self addAnimation:transition forKey:_TYSMWebImageFadeAnimationKey];
+                        }
+                        self.contents = (id)image.CGImage;
+                    }
+                    if (completion) {
+                        if (sentinelChanged) {
+                            completion(nil, url, TYSMWebImageFromNone, TYSMWebImageStageCancelled, nil);
+                        } else {
+                            completion(image, url, from, stage, error);
+                        }
+                    }
+                });
+            };
+            
+            newSentinel = [setter tysm_setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            weakSetter = setter;
+        });
+        
+        
+    });
+}
+
+- (void)tysm_cancelCurrentImageRequest {
+    _TYSMWebImageSetter *setter = objc_getAssociatedObject(self, &_TYSMWebImageSetterKey);
+    if (setter) [setter cancel];
+}
+
+@end

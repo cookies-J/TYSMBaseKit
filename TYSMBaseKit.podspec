@@ -34,6 +34,26 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.14'
   
+  # Kit
+  s.subspec 'TYSMYYKit' do |y|
+    y.requires_arc = true
+    y.source_files = 'TYSMBaseKit/Classes/TYSMYYKit/**/*.{h,m}'
+    y.public_header_files = 'TYSMBaseKit/Classes/TYSMYYKit/**/*.{h}'
+    
+    non_arc_files = 'TYSMBaseKit/Classes/TYSMYYKit/Base/Foundation/NSObject+TYSMAddForARC.{h,m}','TYSMBaseKit/Classes/TYSMYYKit/Base/Foundation/NSThread+TYSMAdd.{h,m}'
+    
+    y.ios.exclude_files = non_arc_files
+    y.subspec 'arc' do |yna|
+      yna.requires_arc = false
+      yna.source_files = non_arc_files
+    end
+    
+    
+    y.libraries = 'z', 'sqlite3'
+    y.frameworks = 'UIKit', 'CoreFoundation', 'CoreText', 'CoreGraphics', 'CoreImage', 'QuartzCore', 'ImageIO', 'AssetsLibrary', 'Accelerate', 'CoreServices', 'SystemConfiguration'
+#    y.ios.vendored_frameworks = 'TYSMBaseKit/Classes/TYSMYYKit/Vendor/WebP.framework'
+  end
+  
   # TYSMGBDeviceInfo 源码分了 iOS、macos ，这里需要按平台处理
   # 参考 https://github.com/lmirosevic/GBDeviceInfo/blob/master/GBDeviceInfo.podspec
   s.subspec 'TYSMGBDeviceInfo' do |deviceInfo|
@@ -73,7 +93,7 @@ Pod::Spec.new do |s|
   s.subspec 'src' do | src |
     src.osx.source_files =
     'TYSMBaseKit/Classes/src/TYSMLog/*',
-#    'TYSMBaseKit/Classes/src/TYSMBackgroundTask/*',
+    'TYSMBaseKit/Classes/src/TYSMBackgroundTask/*',
     'TYSMBaseKit/Classes/src/TYSMDeviceInfo'
     
     src.ios.source_files = 'TYSMBaseKit/Classes/src/**/*'
@@ -98,6 +118,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'TYSMBaseKit' => ['TYSMBaseKit/Assets/*']
   }
+  
   
 #  # 处理Xcode 12 M1 芯片编译错误
   s.pod_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' ,"ONLY_ACTIVE_ARCH" => 'YES' }
