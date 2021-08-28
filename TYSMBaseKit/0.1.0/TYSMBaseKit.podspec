@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TYSMBaseKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.0'
   s.summary          = 'TYSMBaseKit '
   
   # This description is used to generate tags and improve search results.
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
   1. 引入基础组件库，UI、系统工具、日志系统、路由
   2. 详情看 TYSMBaseKit.h
   3. 兼容 osx （少部分）
-  4. 引入 WCDB
   DESC
   
   s.homepage         = 'https://github.com/cookies-J/TYSMBaseKit'
