@@ -9,11 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol CGGViewClassProtocol <NSObject>
+@protocol TYSMViewClassProtocol <NSObject>
 @property (nonatomic, copy) NSString *viewClassName;
 @end
 
-@protocol CGGViewDataSourceProtocol <NSObject>
+@protocol TYSMViewDataSourceProtocol <NSObject>
 @property (nonatomic, copy) NSString *modelClassName;
 @property (nonatomic, strong) id model;
 @end

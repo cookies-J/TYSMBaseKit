@@ -30,6 +30,8 @@
 #import <TYSMBaseKit/TYSMBackgroundTask.h>
 /// 路由组件
 #import <TYSMBaseKit/TYSM_CTMediator.h>
+
+#import <TYSMBaseKit/TYSMAPIRequestManager.h>
 #endif
 
 #endif /* TYSMBaseKit_h */

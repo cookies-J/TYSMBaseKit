@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1401242026DA883000BA54E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401241F26DA883000BA54E3 /* AppDelegate.m */; };
+		1401242326DA883000BA54E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401242226DA883000BA54E3 /* ViewController.m */; };
+		1401242526DA883300BA54E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1401242426DA883300BA54E3 /* Assets.xcassets */; };
+		1401242826DA883300BA54E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1401242626DA883300BA54E3 /* Main.storyboard */; };
+		1401242B26DA883300BA54E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401242A26DA883300BA54E3 /* main.m */; };
+		1401243426DA907500BA54E3 /* EViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401243326DA907500BA54E3 /* EViewController.m */; };
+		1401243C26DB2B4900BA54E3 /* EAPIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401243B26DB2B4900BA54E3 /* EAPIRequestManager.m */; };
+		2ABD1FA65F76E0E3056F27F7 /* Pods_TYSMBaseKit_Macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2920A0D0E58B825B5E0C08 /* Pods_TYSMBaseKit_Macos.framework */; };
 		3472082BE50A9169F3D2A6C4 /* Pods_TYSMBaseKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8658B4A19005C09F8C9B467E /* Pods_TYSMBaseKit_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -14,7 +22,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* TYSMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* TYSMAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* TYSMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* TYSMViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -38,8 +45,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1401241C26DA883000BA54E3 /* TYSMBaseKit_Macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSMBaseKit_Macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1401241E26DA883000BA54E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1401241F26DA883000BA54E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1401242126DA883000BA54E3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1401242226DA883000BA54E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1401242426DA883300BA54E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1401242726DA883300BA54E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1401242926DA883300BA54E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1401242A26DA883300BA54E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1401242C26DA883300BA54E3 /* TYSMBaseKit_Macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TYSMBaseKit_Macos.entitlements; sourceTree = "<group>"; };
+		1401243226DA907500BA54E3 /* EViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EViewController.h; sourceTree = "<group>"; };
+		1401243326DA907500BA54E3 /* EViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EViewController.m; sourceTree = "<group>"; };
+		1401243926DB2AEF00BA54E3 /* EDataRequestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDataRequestProtocol.h; sourceTree = "<group>"; };
+		1401243A26DB2B4900BA54E3 /* EAPIRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAPIRequestManager.h; sourceTree = "<group>"; };
+		1401243B26DB2B4900BA54E3 /* EAPIRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAPIRequestManager.m; sourceTree = "<group>"; };
 		33083B3F5F36F0B4765FFFB9 /* TYSMBaseKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TYSMBaseKit.podspec; path = ../TYSMBaseKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		39DD3AE0C50AA2B28B12375F /* Pods-TYSMBaseKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Tests/Pods-TYSMBaseKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		521FAE0ED9BC16BF018D32B6 /* Pods-TYSMBaseKit_Macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Macos.debug.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Macos/Pods-TYSMBaseKit_Macos.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* TYSMBaseKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSMBaseKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -50,8 +73,6 @@
 		6003F59B195388D20070C39A /* TYSMBaseKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TYSMBaseKit-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* TYSMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSMAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* TYSMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSMAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* TYSMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSMViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* TYSMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSMViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* TYSMBaseKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYSMBaseKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -66,13 +87,23 @@
 		89D616FEF819884FBF01C0B4 /* Pods-TYSMBaseKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Example.release.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Example/Pods-TYSMBaseKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A7EA615A2634632500D7FE40 /* TYSMViewww.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSMViewww.h; sourceTree = "<group>"; };
 		A7EA615B2634632500D7FE40 /* TYSMViewww.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSMViewww.m; sourceTree = "<group>"; };
+		AE2920A0D0E58B825B5E0C08 /* Pods_TYSMBaseKit_Macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TYSMBaseKit_Macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFABC7AF5F94F5CADC1E494 /* Pods-TYSMBaseKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Tests/Pods-TYSMBaseKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8261A682BECEB023983F843 /* Pods-TYSMBaseKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Example/Pods-TYSMBaseKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DA5A1FEED616DDD7F0163D42 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ED67E4CBCBB8B528C4C1134C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FD82F8B71AEAAFE2925E2731 /* Pods-TYSMBaseKit_Macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSMBaseKit_Macos.release.xcconfig"; path = "Target Support Files/Pods-TYSMBaseKit_Macos/Pods-TYSMBaseKit_Macos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1401241926DA883000BA54E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ABD1FA65F76E0E3056F27F7 /* Pods_TYSMBaseKit_Macos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F587195388D20070C39A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,8 +136,26 @@
 				89D616FEF819884FBF01C0B4 /* Pods-TYSMBaseKit_Example.release.xcconfig */,
 				AEFABC7AF5F94F5CADC1E494 /* Pods-TYSMBaseKit_Tests.debug.xcconfig */,
 				39DD3AE0C50AA2B28B12375F /* Pods-TYSMBaseKit_Tests.release.xcconfig */,
+				521FAE0ED9BC16BF018D32B6 /* Pods-TYSMBaseKit_Macos.debug.xcconfig */,
+				FD82F8B71AEAAFE2925E2731 /* Pods-TYSMBaseKit_Macos.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1401241D26DA883000BA54E3 /* TYSMBaseKit_Macos */ = {
+			isa = PBXGroup;
+			children = (
+				1401241E26DA883000BA54E3 /* AppDelegate.h */,
+				1401241F26DA883000BA54E3 /* AppDelegate.m */,
+				1401242126DA883000BA54E3 /* ViewController.h */,
+				1401242226DA883000BA54E3 /* ViewController.m */,
+				1401242426DA883300BA54E3 /* Assets.xcassets */,
+				1401242626DA883300BA54E3 /* Main.storyboard */,
+				1401242926DA883300BA54E3 /* Info.plist */,
+				1401242A26DA883300BA54E3 /* main.m */,
+				1401242C26DA883300BA54E3 /* TYSMBaseKit_Macos.entitlements */,
+			);
+			path = TYSMBaseKit_Macos;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -115,6 +164,7 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for TYSMBaseKit */,
 				6003F5B5195388D20070C39A /* Tests */,
+				1401241D26DA883000BA54E3 /* TYSMBaseKit_Macos */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				09AE8E833538065213DF0113 /* Pods */,
@@ -126,6 +176,7 @@
 			children = (
 				6003F58A195388D20070C39A /* TYSMBaseKit_Example.app */,
 				6003F5AE195388D20070C39A /* TYSMBaseKit_Tests.xctest */,
+				1401241C26DA883000BA54E3 /* TYSMBaseKit_Macos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +190,7 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				8658B4A19005C09F8C9B467E /* Pods_TYSMBaseKit_Example.framework */,
 				7251306AC0643FCF9A67657F /* Pods_TYSMBaseKit_Tests.framework */,
+				AE2920A0D0E58B825B5E0C08 /* Pods_TYSMBaseKit_Macos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,16 +198,19 @@
 		6003F593195388D20070C39A /* Example for TYSMBaseKit */ = {
 			isa = PBXGroup;
 			children = (
+				1401243A26DB2B4900BA54E3 /* EAPIRequestManager.h */,
+				1401243B26DB2B4900BA54E3 /* EAPIRequestManager.m */,
+				1401243926DB2AEF00BA54E3 /* EDataRequestProtocol.h */,
+				1401243226DA907500BA54E3 /* EViewController.h */,
+				1401243326DA907500BA54E3 /* EViewController.m */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				6003F594195388D20070C39A /* Supporting Files */,
 				6003F59C195388D20070C39A /* TYSMAppDelegate.h */,
 				6003F59D195388D20070C39A /* TYSMAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* TYSMViewController.h */,
-				6003F5A6195388D20070C39A /* TYSMViewController.m */,
 				A7EA615A2634632500D7FE40 /* TYSMViewww.h */,
 				A7EA615B2634632500D7FE40 /* TYSMViewww.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for TYSMBaseKit";
 			path = TYSMBaseKit;
@@ -204,6 +259,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1401241B26DA883000BA54E3 /* TYSMBaseKit_Macos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1401242F26DA883300BA54E3 /* Build configuration list for PBXNativeTarget "TYSMBaseKit_Macos" */;
+			buildPhases = (
+				665E20AC3B9962387486B098 /* [CP] Check Pods Manifest.lock */,
+				1401241826DA883000BA54E3 /* Sources */,
+				1401241926DA883000BA54E3 /* Frameworks */,
+				1401241A26DA883000BA54E3 /* Resources */,
+				4472B484FDB991A0CB3A08E8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TYSMBaseKit_Macos;
+			productName = TYSMBaseKit_Macos;
+			productReference = 1401241C26DA883000BA54E3 /* TYSMBaseKit_Macos.app */;
+			productType = "com.apple.product-type.application";
+		};
 		6003F589195388D20070C39A /* TYSMBaseKit_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "TYSMBaseKit_Example" */;
@@ -252,6 +326,11 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "cooljele@gmail.com";
 				TargetAttributes = {
+					1401241B26DA883000BA54E3 = {
+						CreatedOnToolsVersion = 12.5.1;
+						DevelopmentTeam = G2M5WFKCJJ;
+						ProvisioningStyle = Automatic;
+					};
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = G2M5WFKCJJ;
 					};
@@ -276,11 +355,21 @@
 			targets = (
 				6003F589195388D20070C39A /* TYSMBaseKit_Example */,
 				6003F5AD195388D20070C39A /* TYSMBaseKit_Tests */,
+				1401241B26DA883000BA54E3 /* TYSMBaseKit_Macos */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1401241A26DA883000BA54E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1401242526DA883300BA54E3 /* Assets.xcassets in Resources */,
+				1401242826DA883300BA54E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F588195388D20070C39A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,17 +399,73 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TYSMBaseKit_Example/Pods-TYSMBaseKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/TYSMBaseKit/TYSMBaseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit-iOS/sqliterk.framework",
+				"${BUILT_PRODUCTS_DIR}/TYSMBaseKit-iOS/TYSMBaseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB-iOS/WCDB.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher-iOS/sqlcipher.framework",
 				"${BUILT_PRODUCTS_DIR}/XXNibBridge/XXNibBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYSMBaseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XXNibBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TYSMBaseKit_Example/Pods-TYSMBaseKit_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4472B484FDB991A0CB3A08E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TYSMBaseKit_Macos/Pods-TYSMBaseKit_Macos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking-c94d3492/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit-macOS/sqliterk.framework",
+				"${BUILT_PRODUCTS_DIR}/TYSMBaseKit-macOS/TYSMBaseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB-macOS/WCDB.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher-macOS/sqlcipher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYSMBaseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TYSMBaseKit_Macos/Pods-TYSMBaseKit_Macos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		665E20AC3B9962387486B098 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TYSMBaseKit_Macos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CF9DF548913311F31B1DD0C5 /* [CP] Check Pods Manifest.lock */ = {
@@ -370,14 +515,25 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1401241826DA883000BA54E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1401242326DA883000BA54E3 /* ViewController.m in Sources */,
+				1401242B26DA883300BA54E3 /* main.m in Sources */,
+				1401242026DA883000BA54E3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F586195388D20070C39A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1401243C26DB2B4900BA54E3 /* EAPIRequestManager.m in Sources */,
 				6003F59E195388D20070C39A /* TYSMAppDelegate.m in Sources */,
 				A7EA615C2634632500D7FE40 /* TYSMViewww.m in Sources */,
-				6003F5A7195388D20070C39A /* TYSMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1401243426DA907500BA54E3 /* EViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +556,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1401242626DA883300BA54E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1401242726DA883300BA54E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		6003F596195388D20070C39A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,6 +591,95 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1401242D26DA883300BA54E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521FAE0ED9BC16BF018D32B6 /* Pods-TYSMBaseKit_Macos.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = TYSMBaseKit_Macos/TYSMBaseKit_Macos.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G2M5WFKCJJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TYSMBaseKit_Macos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TYSMBaseKit-Macos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1401242E26DA883300BA54E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD82F8B71AEAAFE2925E2731 /* Pods-TYSMBaseKit_Macos.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = TYSMBaseKit_Macos/TYSMBaseKit_Macos.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G2M5WFKCJJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TYSMBaseKit_Macos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TYSMBaseKit-Macos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -585,6 +838,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1401242F26DA883300BA54E3 /* Build configuration list for PBXNativeTarget "TYSMBaseKit_Macos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1401242D26DA883300BA54E3 /* Debug */,
+				1401242E26DA883300BA54E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "TYSMBaseKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

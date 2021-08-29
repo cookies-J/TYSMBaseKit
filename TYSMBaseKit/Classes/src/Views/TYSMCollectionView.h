@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CGGViewClassProtocol.h"
+#import "TYSMViewClassProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TYSMCollectionView : UICollectionView <CGGViewDataSourceProtocol>
+@interface TYSMCollectionView : UICollectionView <TYSMViewDataSourceProtocol>
 
 @end
 

@@ -1,8 +1,9 @@
 use_frameworks!
 
-platform :ios, '11.0'
 
 target 'TYSMBaseKit_Example' do
+  platform :ios, '11.0'
+
   pod 'TYSMBaseKit', :path => '../'
 
   target 'TYSMBaseKit_Tests' do
@@ -10,4 +11,10 @@ target 'TYSMBaseKit_Example' do
 
     
   end
+end
+
+target 'TYSMBaseKit_Macos' do
+  platform :osx, '10.14'
+  pod 'TYSMBaseKit', :path => '../'
+
 end

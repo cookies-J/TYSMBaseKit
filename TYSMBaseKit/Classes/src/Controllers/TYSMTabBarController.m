@@ -18,6 +18,14 @@
     // Do any additional setup after loading the view.
 }
 
+- (NSString *)nibName {
+    return NSStringFromClass(self.class);
+}
+
+- (NSBundle *)nibBundle {
+    return nil;
+}
+
 /*
 #pragma mark - Navigation
 

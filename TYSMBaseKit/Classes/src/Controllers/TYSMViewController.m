@@ -17,12 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    if (@available(iOS 13.0, *)) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage systemImageNamed:@"chevron.left"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:nil action:nil];
-    } else {
-        // Fallback on earlier versions
-    }
-    self.navigationItem.backBarButtonItem.imageInsets = UIEdgeInsetsMake(0, 10, 0, 10);
+    
     // Do any additional setup after loading the view.
 }
 
@@ -33,6 +28,14 @@
         return UIStatusBarStyleDefault;
         // Fallback on earlier versions
     }
+}
+
+- (NSString *)nibName {
+    return NSStringFromClass(self.class);
+}
+
+- (NSBundle *)nibBundle {
+    return nil;
 }
 
 /*

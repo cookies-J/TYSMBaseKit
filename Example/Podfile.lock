@@ -1,12 +1,44 @@
 PODS:
-  - TYSMBaseKit (0.1.0):
-    - TYSMBaseKit/src (= 0.1.0)
-    - TYSMBaseKit/TYSMCTMediator (= 0.1.0)
-    - TYSMBaseKit/TYSMGBDeviceInfo (= 0.1.0)
-  - TYSMBaseKit/src (0.1.0):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - TYSMBaseKit (0.1.2):
+    - TYSMBaseKit/src (= 0.1.2)
+    - TYSMBaseKit/TYSMCTMediator (= 0.1.2)
+    - TYSMBaseKit/TYSMGBDeviceInfo (= 0.1.2)
+    - TYSMBaseKit/TYSMNetwork (= 0.1.2)
+    - TYSMBaseKit/TYSMYYKit (= 0.1.2)
+  - TYSMBaseKit/src (0.1.2):
+    - TYSMBaseKit/TYSMYYKit
     - XXNibBridge
-  - TYSMBaseKit/TYSMCTMediator (0.1.0)
-  - TYSMBaseKit/TYSMGBDeviceInfo (0.1.0)
+  - TYSMBaseKit/TYSMCTMediator (0.1.2)
+  - TYSMBaseKit/TYSMGBDeviceInfo (0.1.2)
+  - TYSMBaseKit/TYSMNetwork (0.1.2):
+    - AFNetworking
+    - TYSMBaseKit/TYSMYYKit
+  - TYSMBaseKit/TYSMYYKit (0.1.2):
+    - TYSMBaseKit/TYSMYYKit/arc (= 0.1.2)
+    - WCDB
+  - TYSMBaseKit/TYSMYYKit/arc (0.1.2):
+    - WCDB
+  - WCDB (1.0.7.5):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
   - XXNibBridge (2.3.1)
 
 DEPENDENCIES:
@@ -14,6 +46,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
+    - SQLiteRepairKit
+    - WCDB
+    - WCDBOptimizedSQLCipher
     - XXNibBridge
 
 EXTERNAL SOURCES:
@@ -21,9 +57,13 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TYSMBaseKit: 20ca4537292996112ad8d54fa094b7a10fa49afc
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  TYSMBaseKit: f9347ad647751a2483331b39e999c162817e18a0
+  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 6134f8eb8173eac6960b715ca641f75d41715797
+PODFILE CHECKSUM: 93cfa730a2a129b9f3be1b1a2ec625d44609ea1f
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

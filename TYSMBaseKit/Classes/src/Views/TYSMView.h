@@ -7,11 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <XXNibBridge/XXNibBridge.h>
-#import "CGGViewClassProtocol.h"
+#import "TYSMViewClassProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TYSMView : UIView <XXNibBridge,CGGViewDataSourceProtocol> 
+@interface TYSMView : UIView <XXNibBridge,TYSMViewDataSourceProtocol> 
 
 @end
 
