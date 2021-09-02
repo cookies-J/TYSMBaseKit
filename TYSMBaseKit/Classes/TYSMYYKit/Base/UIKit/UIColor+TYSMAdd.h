@@ -47,6 +47,12 @@ extern void TYSM_HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
 #ifndef TYSM_UIColorHex
 #define TYSM_UIColorHex(_hex_)   [UIColor tysm_colorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
 #endif
+
+#ifndef TYSM_UIColorName
+#define TYSM_UIColorName(_name_)   [UIColor tysm_colorNamed:((__bridge NSString *)CFSTR(#_name_))]
+#endif
+
+
 /**
  Provide some method for `UIColor` to convert color between
  RGB,HSB,HSL,CMYK and Hex.
@@ -206,6 +212,9 @@ extern void TYSM_HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
                    brightness:(CGFloat)brightnessDelta
                         alpha:(CGFloat)alphaDelta;
 
+/// 创建颜色
+/// @param name 颜色名来自 asset
++ (UIColor *)tysm_colorNamed:(NSString *)name;
 
 #pragma mark - Get color's description
 ///=============================================================================

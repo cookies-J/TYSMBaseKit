@@ -331,6 +331,11 @@ assert(res == 0); \
 #undef YYMUTEX_ASSERT_ON_ERROR
 }
 
+static inline CGFloat AACStatusBarHeight(void)
+{
+    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+    return MIN(statusBarSize.width, statusBarSize.height);
+}
 
 YY_EXTERN_C_END
 #endif

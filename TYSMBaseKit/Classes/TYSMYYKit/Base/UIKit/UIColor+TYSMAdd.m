@@ -368,6 +368,11 @@ static BOOL tysm_hexStrToRGBA(NSString *str,
     return [UIColor colorWithHue:hh saturation:ss brightness:bb alpha:aa];
 }
 
++ (UIColor *)tysm_colorNamed:(NSString *)name {
+    NSAssert(name, @"颜色名字不能为空");
+    return [self colorNamed:name];
+}
+
 - (BOOL)tysm_getHue:(CGFloat *)hue
     saturation:(CGFloat *)saturation
      lightness:(CGFloat *)lightness

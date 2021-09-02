@@ -5,26 +5,37 @@
 //  Created by Jele Lam on 2021/8/29.
 //
 
+static NSString * _Nullable const k_TYSM_USER_KEY = @"abc";
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TYSMUserTool : NSObject
 
+
 /**
- *  判断是否已登录
+ *
+ 通过单例模式对工具类进行初始化
+ *
  */
-- (BOOL)isLogin;
++ (instancetype)shareUser;
+
 /**
-*  保存用户信息
-*/
-- (void)saveUserInfo:(id)userInfo;
+ *
+ 通过单例模式对工具类进行初始化
+ *
+ */
++ (void)configInfo:(NSDictionary *)infoDic;
 
-///退出登录
-- (void)logout:(void(^)(void))completed;
+/**
+ *
+ 用户退出登录的操作
+ *
+ */
++ (void)loginOut;
 
-/// 获取用户信息
-- (id)getUserInfo;
++ (void)configUserModel:(id)model;
 
 @end
 
