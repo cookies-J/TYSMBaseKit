@@ -19,7 +19,7 @@ TYSMSYNTH_DUMMY_CLASS(NSObject_TYSMAddForKVO)
 
 
 
-static const int block_key;
+static const NSString *block_key = @"block_key";
 
 @interface _TYSMNSObjectKVOBlockTarget : NSObject
 
@@ -39,7 +39,7 @@ static const int block_key;
     return self;
 }
 
-- (void)tysm_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (!self.block) return;
     
     BOOL isPrior = [[change objectForKey:NSKeyValueChangeNotificationIsPriorKey] boolValue];
